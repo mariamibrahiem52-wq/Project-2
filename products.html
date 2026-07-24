@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المنتجات - مريم زون</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="loading-screen">
+        <div class="loader"><div class="loader-spinner"></div><div class="loader-text">جاري التحميل...</div></div>
+    </div>
+
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <img src="images/logo-mariam.png" alt="مريم زون" style="height:40px;">
+                <span class="logo-text">مريم زون</span>
+            </div>
+            <nav class="navbar">
+                <ul class="nav-list">
+                    <li><a href="home.html">الرئيسية</a></li>
+                    <li><a href="product.html" class="active">المنتجات</a></li>
+                    <li><a href="about.html">من نحن</a></li>
+                    <li><a href="contact.html">تواصل معنا</a></li>
+                    <li><a href="Index.html" class="logout-link"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <span></span><span></span><span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="products-page">
+        <div class="container">
+            <h1 style="font-size: 2.5rem; text-align: center; margin-bottom: 40px;">منتجاتنا</h1>
+            
+            <div class="products-toolbar">
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="ابحث عن منتج...">
+                    <button id="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="filter-sort">
+                    <select id="category-filter">
+                        <option value="all">جميع التصنيفات</option>
+                        <option value="processors">معالجات</option>
+                        <option value="motherboards">لوحات أم</option>
+                        <option value="ram">ذاكرة عشوائية</option>
+                        <option value="graphics">بطاقات رسومية</option>
+                        <option value="storage">تخزين</option>
+                        <option value="accessories">إكسسوارات</option>
+                    </select>
+                    <select id="sort-select">
+                        <option value="name">الترتيب حسب الاسم</option>
+                        <option value="price">السعر (منخفض)</option>
+                        <option value="price-desc">السعر (مرتفع)</option>
+                        <option value="rating">التقييم</option>
+                    </select>
+                </div>
+            </div>
+            <div class="product-grid" id="product-grid">
+                <!-- سيتم عرض المنتجات بواسطة JavaScript -->
+            </div>
+            <div class="pagination" id="pagination">
+                <button class="active">1</button>
+                <button>2</button>
+                <button>3</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-col"><h4>مريم زون</h4><p>متجر الأجهزة الإلكترونية</p></div>
+            <div class="footer-col"><h4>روابط</h4><ul><li><a href="home.html">الرئيسية</a></li><li><a href="product.html">المنتجات</a></li><li><a href="about.html">من نحن</a></li><li><a href="contact.html">تواصل معنا</a></li></ul></div>
+            <div class="footer-col"><h4>تواصل</h4><p><i class="fas fa-phone"></i> +249 123 456 789</p><p><i class="fas fa-envelope"></i> info@mariamzone.com</p><p><i class="fas fa-map-marker-alt"></i> الخرطوم، السودان</p></div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2026 مريم زون. جميع الحقوق محفوظة</p></div>
+    </footer>
+
+    <button id="back-to-top"><i class="fas fa-chevron-up"></i></button>
+    <script src="script.js"></script>
+</body>
+</html>
