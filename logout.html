@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الخروج - مريم زون</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ===== صفحة تسجيل الخروج ===== */
+        .logout-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0a2463 40%, #1a3a7a);
+            padding: 20px;
+        }
+        .logout-card {
+            background: #ffffff;
+            border-radius: 30px;
+            padding: 50px 40px;
+            max-width: 450px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            animation: fadeIn 0.5s ease;
+        }
+        .logout-card .logout-icon {
+            font-size: 4rem;
+            color: #f58220;
+            margin-bottom: 20px;
+        }
+        .logout-card h2 {
+            color: #0a2463;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        .logout-card p {
+            color: #6c757d;
+            font-size: 1rem;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        .logout-card .btn-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .logout-card .btn {
+            padding: 12px 35px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .logout-card .btn-primary {
+            background: #f58220;
+            color: #ffffff;
+            border-color: #f58220;
+        }
+        .logout-card .btn-primary:hover {
+            background: #e07010;
+            transform: scale(1.05);
+        }
+        .logout-card .btn-outline {
+            background: transparent;
+            color: #0a2463;
+            border-color: #0a2463;
+        }
+        .logout-card .btn-outline:hover {
+            background: #0a2463;
+            color: #ffffff;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .logout-card { padding: 30px 20px; }
+            .logout-card h2 { font-size: 1.5rem; }
+            .logout-card .btn { padding: 10px 25px; font-size: 0.9rem; }
+            .logout-card .btn-group { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <div id="loading-screen">
+        <div class="loader"><div class="loader-spinner"></div><div class="loader-text">جاري التحميل...</div></div>
+    </div>
+
+    <div class="logout-page">
+        <div class="logout-card">
+            <div class="logout-icon">
+                <i class="fas fa-sign-out-alt"></i>
+            </div>
+            <h2>تسجيل الخروج</h2>
+            <p>هل أنت متأكد من رغبتك في تسجيل الخروج من حسابك؟<br>سيتم توجيهك إلى صفحة تسجيل الدخول.</p>
+            <div class="btn-group">
+                <a href="home.html" class="btn btn-outline">إلغاء</a>
+                <a href="index.html" class="btn btn-primary"><i class="fas fa-sign-out-alt"></i> تأكيد الخروج</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // إظهار شاشة التحميل عند الضغط على زر تأكيد الخروج
+        document.querySelector('.btn-primary')?.addEventListener('click', function(e) {
+            e.preventDefault();
+            const loadingScreen = document.getElementById('loading-screen');
+            if (loadingScreen) {
+                loadingScreen.style.display = 'flex';
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 800);
+            } else {
+                window.location.href = 'index.html';
+            }
+        });
+    </script>
+</body>
+</html>
